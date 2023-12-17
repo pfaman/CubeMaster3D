@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject gameOverPanel;
+    public GameObject settingPanel;
     public Button  pauseButtton;
     public TextMeshProUGUI bestScore;
     
@@ -64,13 +65,31 @@ public class UIManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
+    public void ShowsSettingPanel()
+    {
+        settingPanel.SetActive(true);
+      //  Time.timeScale = 0;
+        FindObjectOfType<AudioManager>().Stop("Theme");
+    }
     public void HidePausePanel()
     {
         pausePanel.SetActive(false);
     }
     public void ResumeButton()
     {
-        FindObjectOfType<AudioManager>().Play("Theme");
+        if (SettingManager.Instance != null)
+
+        {
+            if (SettingManager.Instance.musicToggle.isOn)
+            {
+                FindObjectOfType<AudioManager>().Play("Theme");
+            }
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("Theme");
+
+        }
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
@@ -90,5 +109,18 @@ public class UIManager : MonoBehaviour
 
        // pausePanel.SetActive(false);
         Debug.Log("Menu Button");
+    }
+    public void BackButton()
+    {
+        gameOverPanel.SetActive(false);
+        pausePanel.SetActive(true);
+
+    }
+
+    public void SettingBackButton()
+    {
+        settingPanel.SetActive(false);
+        pausePanel.SetActive(true);
+
     }
 }

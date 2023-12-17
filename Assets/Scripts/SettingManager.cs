@@ -11,44 +11,101 @@ public class SettingManager : MonoBehaviour
     /*public AudioSource audioClipBlast;
     public AudioSource audioClipMusic;
     public AudioSource audioClipSwipeUp;*/
-    
+    public static SettingManager Instance;
 
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
-    }
-    public void SetMusicToggle()
-    {
-        Debug.Log("SetMusicToggle");
-        if (musicToggle.isOn)
-        {
+        soundToggle.isOn = true;
+        musicToggle.isOn = true;
+        vibrationToggle.isOn = true;
 
-            
+
+        SetSaveToggle(); 
+    }
+    public void SetSaveToggle()
+    {
+        if (PlayerPrefs.GetInt("SoundToggle") == 1)
+        {
+            soundToggle.isOn = true;
         }
         else
         {
-          //  AudioManager.Instance.StopSoundAsPerIndex(1);
-            //  musicToggle.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = crossImage.sprite;
+            soundToggle.isOn = false;
+
+        }
+
+        if (PlayerPrefs.GetInt("MusicToggle") == 1)
+        {
+            musicToggle.isOn = true;
+        }
+        else
+        {
+            musicToggle.isOn = false;
+
+        }
+
+        if (PlayerPrefs.GetInt("VibrateToggle") == 1)
+        {
+            vibrationToggle.isOn = true;
+        }
+        else
+        {
+            vibrationToggle.isOn = false;
+
+        }
+    }
+
+    public void SetMusicToggle()
+    {
+        if (musicToggle.isOn)
+        {
+            // FindObjectOfType<AudioManager>().Play("Theme");
+            //musicToggle.isOn = false;
+            Debug.Log("if SetMusicToggle");
+            PlayerPrefs.SetInt("MusicToggle", 1);
+
+        }
+        else
+        {
+         //   FindObjectOfType<AudioManager>().Stop("Theme");
+            Debug.Log(" else SetMusicToggle");
+            PlayerPrefs.SetInt("MusicToggle", 0);
+
+            //  musicToggle.isOn = true;
+            //  AudioManager.Instance.StopSoundAsPerIndex(1);
         }
     }
 
     public void SetSoundToggle()
     {
-
         if (soundToggle.isOn)
         {
+           // FindObjectOfType<AudioManager>().Play("Blast");
+          //  FindObjectOfType<AudioManager>().Play("SwipeUp");
             Debug.Log("if SetSoundToggle");
+            // soundToggle.isOn = false;
+            PlayerPrefs.SetInt("SoundToggle", 1);
 
-            soundToggle.isOn = false;
-            //soundToggle.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = tickImage.sprite;
         }
         else
         {
-            Debug.Log("else SetSoundToggle");
+            PlayerPrefs.SetInt("SoundToggle", 0);
 
+            ///  FindObjectOfType<AudioManager>().Stop("Blast");
+            ///  FindObjectOfType<AudioManager>().Stop("SwipeUp");
+            Debug.Log("else SetSoundToggle");
+         //   soundToggle.isOn = true;
          //   AudioManager.Instance.StopSoundAsPerIndex(0);
 
-            // soundToggle.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = crossImage.sprite;
         }
     }
 
@@ -58,13 +115,19 @@ public class SettingManager : MonoBehaviour
 
         if (vibrationToggle.isOn)
         {
-           
-         //   vibrationToggle.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = tickImage.sprite;
+            PlayerPrefs.SetInt("VibrateToggle", 1);
+            //  vibrationToggle.isOn = false;
+
         }
         else
         {
-            //vibrationToggle.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = crossImage.sprite;
+            PlayerPrefs.SetInt("VibrateToggle", 0);
+
+            //  vibrationToggle.isOn = true;
+
         }
     }
+
+
 
 }

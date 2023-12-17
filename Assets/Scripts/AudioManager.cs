@@ -33,7 +33,18 @@ public class AudioManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }*/
-        Play("Theme");
+        if (SettingManager.Instance != null) {
+            if (SettingManager.Instance.musicToggle.isOn)
+            {
+                Play("Theme");
+
+            }
+        }
+        else
+        {
+            Play("Theme");
+
+        }
     }
 
     public void Play(string name)

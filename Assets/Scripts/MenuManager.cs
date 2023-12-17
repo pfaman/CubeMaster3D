@@ -9,6 +9,21 @@ public class MenuManager : MonoBehaviour
     public GameObject settingPanel;
     public Button settingButton;
     // Start is called before the first frame update
+
+    public static MenuManager Instance;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+       // SettingManager.Instance.SetSaveToggle();
+    }
     public void PlayButton()
     {
         SceneManager.LoadScene(2);

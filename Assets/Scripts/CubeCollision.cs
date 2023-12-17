@@ -52,10 +52,26 @@ public class CubeCollision : MonoBehaviour {
             }
 
             FX.Instance.PlayCubeExplosionFX (contactPoint, cube.CubeColor) ;
-            FindObjectOfType<AudioManager>().Play("Blast");
-                
+
+                if(SettingManager.Instance != null)
+                {
+                    if (SettingManager.Instance.soundToggle.isOn)
+                    {
+                        FindObjectOfType<AudioManager>().Play("Blast");
+
+                    }
+                }
+                else
+                {
+                     FindObjectOfType<AudioManager>().Play("Blast");
+
+                }
+
+                // FindObjectOfType<AudioManager>().Play("Blast");
+
+
                 // Destroy the two cubes:
-            CubeSpawner.Instance.DestroyCube (cube) ;
+                CubeSpawner.Instance.DestroyCube (cube) ;
             CubeSpawner.Instance.DestroyCube (otherCube);
             Debug.Log("In OnCollisionEnter");
             

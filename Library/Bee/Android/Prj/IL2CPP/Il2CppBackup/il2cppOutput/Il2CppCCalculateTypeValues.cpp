@@ -43060,20 +43060,22 @@ struct UIManager_t16825A2483574F37D7D47AB939A6FA639678B1F3  : public MonoBehavio
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pausePanel_4;
 	// UnityEngine.GameObject UIManager::gameOverPanel
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gameOverPanel_5;
+	// UnityEngine.GameObject UIManager::settingPanel
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___settingPanel_6;
 	// UnityEngine.UI.Button UIManager::pauseButtton
-	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___pauseButtton_6;
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___pauseButtton_7;
 	// TMPro.TextMeshProUGUI UIManager::bestScore
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bestScore_7;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bestScore_8;
 	// TMPro.TextMeshProUGUI UIManager::currentScore
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___currentScore_8;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___currentScore_9;
 	// System.Int32 UIManager::bestScoreValue
-	int32_t ___bestScoreValue_10;
+	int32_t ___bestScoreValue_11;
 	// System.Int32 UIManager::currentScoreValue
-	int32_t ___currentScoreValue_11;
+	int32_t ___currentScoreValue_12;
 	// System.Int32 UIManager::blastValue
-	int32_t ___blastValue_12;
+	int32_t ___blastValue_13;
 	// System.Int32 UIManager::score
-	int32_t ___score_13;
+	int32_t ___score_14;
 };
 
 // TMPro.Examples.VertexColorCycler
@@ -60624,6 +60626,11 @@ struct ListView_t46F7BEBFA3240E5A3BE3AC4EF5173C442B5C71FD_StaticFields
 // LoaderCallback
 
 // MenuManager
+struct MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16_StaticFields
+{
+	// MenuManager MenuManager::Instance
+	MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16* ___Instance_6;
+};
 
 // MenuManager
 
@@ -60771,6 +60778,11 @@ struct SceneLoader_t96010F6DCE0AD6BEB011B72A85110D4801F5CCCF_StaticFields
 // SceneLoader
 
 // SettingManager
+struct SettingManager_t5BA69D8AAAA9B58723E3BD1899DC694A0ACD1D5C_StaticFields
+{
+	// SettingManager SettingManager::Instance
+	SettingManager_t5BA69D8AAAA9B58723E3BD1899DC694A0ACD1D5C* ___Instance_7;
+};
 
 // SettingManager
 
@@ -60910,7 +60922,7 @@ struct UIDocument_t4186BEBCC01278F63B895274AA08AD9ADFBF4C77_StaticFields
 struct UIManager_t16825A2483574F37D7D47AB939A6FA639678B1F3_StaticFields
 {
 	// UIManager UIManager::Instance
-	UIManager_t16825A2483574F37D7D47AB939A6FA639678B1F3* ___Instance_9;
+	UIManager_t16825A2483574F37D7D47AB939A6FA639678B1F3* ___Instance_10;
 };
 
 // UIManager
@@ -67928,7 +67940,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3229 = { sizeof(CubeSpawner_
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3230;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3230 = { sizeof(FX_tEE0F0129E90210865E9C1EE9497AFD6DAD025B88), -1, sizeof(FX_tEE0F0129E90210865E9C1EE9497AFD6DAD025B88_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3231;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3231 = { sizeof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3231 = { sizeof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16), -1, sizeof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3232;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3232 = { sizeof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3233;
@@ -67938,7 +67950,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3234 = { sizeof(U3CLoadScene
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3235;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3235 = { sizeof(SceneLoader_t96010F6DCE0AD6BEB011B72A85110D4801F5CCCF), -1, sizeof(SceneLoader_t96010F6DCE0AD6BEB011B72A85110D4801F5CCCF_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3236;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3236 = { sizeof(SettingManager_t5BA69D8AAAA9B58723E3BD1899DC694A0ACD1D5C), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3236 = { sizeof(SettingManager_t5BA69D8AAAA9B58723E3BD1899DC694A0ACD1D5C), -1, sizeof(SettingManager_t5BA69D8AAAA9B58723E3BD1899DC694A0ACD1D5C_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3237;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3237 = { sizeof(Sound_t06FB644265ECCFDDC2E12D87F6111B3760FC17A0), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3238;
