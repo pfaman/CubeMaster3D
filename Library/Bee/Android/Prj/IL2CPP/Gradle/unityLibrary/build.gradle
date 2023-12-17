@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(name: 'RichTap_ASDK_LITE_2.1.4_20230411', ext:'aar')
 
 }
 

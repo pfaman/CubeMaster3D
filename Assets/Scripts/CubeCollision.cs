@@ -1,9 +1,20 @@
 ﻿using UnityEngine ;
 
 public class CubeCollision : MonoBehaviour {
-   Cube cube ;
 
-   private void Awake () {
+    Cube cube ;
+
+    public static CubeCollision Instance;
+
+
+    private void Start()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    private void Awake () {
       cube = GetComponent<Cube> () ;
    }
 
@@ -41,12 +52,14 @@ public class CubeCollision : MonoBehaviour {
             }
 
             FX.Instance.PlayCubeExplosionFX (contactPoint, cube.CubeColor) ;
-             FindObjectOfType<AudioManager>().Play("Blast");
-
+            FindObjectOfType<AudioManager>().Play("Blast");
+                
                 // Destroy the two cubes:
-                CubeSpawner.Instance.DestroyCube (cube) ;
-            CubeSpawner.Instance.DestroyCube (otherCube) ;
-                Debug.Log("In OnCollisionEnter");
+            CubeSpawner.Instance.DestroyCube (cube) ;
+            CubeSpawner.Instance.DestroyCube (otherCube);
+            Debug.Log("In OnCollisionEnter");
+            
+            
          }
       }
    }

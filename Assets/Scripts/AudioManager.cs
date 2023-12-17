@@ -8,6 +8,7 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+   // public static AudioManager Instance;
 
     private void Awake()
     {
@@ -23,6 +24,15 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
+        /*if (Instance == null)
+        {
+            Instance = this;
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }*/
         Play("Theme");
     }
 
@@ -35,5 +45,17 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.audioSource.Stop();
+    }
+
+    public void StopSoundAsPerIndex(int index)
+    {
+        if(index==0){
+            Stop("Blast");
+            Stop("SwipeUp");
+        }
+        else
+        {
+            Stop("Theme");
+        }
     }
 }

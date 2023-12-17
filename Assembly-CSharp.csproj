@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\_Various Asset\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\RichTap\RichTap CoreSDK For Unity3D\Assets\Scripts\Loader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\_Various Asset\Unity-Logs-Viewer\Reporter\Reporter.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\_Various Asset\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\RichTap\RichTap CoreSDK For Unity3D\Assets\Scripts\LoaderCallback.cs" />
     <Compile Include="Assets\Popup UI\Scripts\PopupUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -85,7 +87,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\TouchSlider.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\RichTap\RichTap CoreSDK For Unity3D\Assets\Scripts\Control.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\RichTap\RichTap CoreSDK For Unity3D\Assets\Scripts\RichtapEffectSource.cs" />
     <Compile Include="Assets\_Various Asset\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
@@ -97,6 +101,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\_Various Asset\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\SettingManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\RedZone.cs" />
@@ -811,9 +816,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Richtap.IOS.Editor.csproj">
+      <Project>{4FD99884-16E0-69E9-4154-28BA58BB0103}</Project>
+      <Name>Richtap.IOS.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="RichTap.csproj">
+      <Project>{A9A72544-A3AF-EB96-0030-D411413348DF}</Project>
+      <Name>RichTap</Name>
+    </ProjectReference>
     <ProjectReference Include="Custom_Editor.csproj">
       <Project>{1EBF0B8F-471D-36F3-AF5F-F314FF7C4722}</Project>
       <Name>Custom_Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="RichTap.Editor.csproj">
+      <Project>{D85775BD-D06F-2B39-BF0F-EB613CC7D541}</Project>
+      <Name>RichTap.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

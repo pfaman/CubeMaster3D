@@ -6,6 +6,8 @@ public class RedZone : MonoBehaviour {
       if (cube != null) {
          if (!cube.IsMainCube && cube.CubeRigidbody.velocity.magnitude < .1f) {
             Debug.Log ("Gameover") ;
+                UIManager.Instance.ShowGameOverPanel();
+
          }
       }
    }

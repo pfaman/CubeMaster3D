@@ -32,4 +32,9 @@ public class MenuManager : MonoBehaviour
     {
         settingPanel.SetActive(false);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

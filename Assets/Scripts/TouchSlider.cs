@@ -39,6 +39,11 @@ public class TouchSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
       uiSlider.value = 0f ;
       Debug.Log("OnPointerUp");
       FindObjectOfType<AudioManager>().Play("SwipeUp");
+
+      Handheld.Vibrate();
+      UIManager.Instance.score += 1;
+      UIManager.Instance.score = UIManager.Instance.score * UIManager.Instance.blastValue;
+
    }
 
    private void OnDestroy () {

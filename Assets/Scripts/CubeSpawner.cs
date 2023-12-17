@@ -20,8 +20,7 @@ public class CubeSpawner : MonoBehaviour {
    private Vector3 defaultSpawnPosition ;
 
    private void Awake () {
-      Instance = this ;
-
+       Instance = this ;
       defaultSpawnPosition = transform.position ;
       maxCubeNumber = (int)Mathf.Pow (2, maxPower) ;
 
@@ -34,6 +33,7 @@ public class CubeSpawner : MonoBehaviour {
    }
 
    private void AddCubeToQueue () {
+       
       Cube cube = Instantiate (cubePrefab, defaultSpawnPosition, Quaternion.identity, transform)
                               .GetComponent <Cube> () ;
 
@@ -78,7 +78,8 @@ public class CubeSpawner : MonoBehaviour {
       cube.transform.rotation = Quaternion.identity ;
       cube.IsMainCube = false ;
       cube.gameObject.SetActive (false) ;
-      cubesQueue.Enqueue (cube) ;
+      cubesQueue.Enqueue (cube);
+      Debug.Log("DestroyCube");
    }
 
    public int GenerateRandomNumber () {
